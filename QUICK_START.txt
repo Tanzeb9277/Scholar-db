@@ -1,0 +1,143 @@
+╔══════════════════════════════════════════════════════════════════════════════╗
+║                  ISLAMIC SCHOLARS BOOKS SCRAPER                              ║
+║                         Quick Start Guide                                    ║
+╚══════════════════════════════════════════════════════════════════════════════╝
+
+📚 GOAL: Scrape book titles from sifatusafwa.com for Islamic scholars
+
+⚡ QUICK START (4 commands):
+
+  1. pip install -r requirements.txt
+  2. pip install undetected-chromedriver selenium
+  3. Edit scholars.json (add your scholars)
+  4. python3 scraper_undetected.py
+
+────────────────────────────────────────────────────────────────────────────────
+
+📋 MAIN FILES:
+
+  INPUT:
+    scholars.json          → Add your list of scholars here
+
+  SCRAPERS:
+    scraper_undetected.py  → ⭐ RECOMMENDED (best success rate)
+    scraper_playwright.py  → Alternative browser-based scraper
+    scraper.py             → Basic scraper (likely blocked by Cloudflare)
+
+  OUTPUT:
+    scholars_books.json    → Scraped results (JSON format)
+
+  UTILITIES:
+    test_url.py            → Test if a scholar URL is valid
+    view_results.py        → View results in readable format
+
+────────────────────────────────────────────────────────────────────────────────
+
+🎯 HOW TO ADD SCHOLARS:
+
+  1. Find a scholar page on sifatusafwa.com
+  2. Example URL: https://www.sifatusafwa.com/en/manufacturer/imam-malik-179h.html
+  3. Extract: url_name = "imam-malik", death_year = "179"
+  4. Test it: python3 test_url.py imam-malik 179
+  5. Add to scholars.json:
+
+     {
+       "name": "Imam Malik",
+       "url_name": "imam-malik",
+       "death_year": "179"
+     }
+
+────────────────────────────────────────────────────────────────────────────────
+
+🚀 USAGE:
+
+  Test a URL:
+    python3 test_url.py imam-malik 179
+
+  Run scraper (RECOMMENDED):
+    python3 scraper_undetected.py
+
+  View results:
+    python3 view_results.py
+
+  Export to CSV:
+    python3 view_results.py --csv
+
+────────────────────────────────────────────────────────────────────────────────
+
+⚠️  IMPORTANT NOTES:
+
+  • Website uses Cloudflare protection (anti-bot)
+  • scraper_undetected.py has best chance of success
+  • Browser window will open and wait ~10 seconds per page
+  • Test with 1-2 scholars first before running full list
+  • Add delays between requests (built-in)
+  • Respect the website's terms of service
+
+────────────────────────────────────────────────────────────────────────────────
+
+📖 DETAILED DOCS:
+
+  README.md           → Full documentation
+  USAGE.md            → Step-by-step instructions
+  PROJECT_SUMMARY.md  → Complete project overview
+
+────────────────────────────────────────────────────────────────────────────────
+
+🎓 EXAMPLE scholars.json:
+
+[
+  {
+    "name": "Imam Malik",
+    "url_name": "imam-malik",
+    "death_year": "179"
+  },
+  {
+    "name": "Imam Bukhari",
+    "url_name": "imam-bukhari",
+    "death_year": "256"
+  }
+]
+
+────────────────────────────────────────────────────────────────────────────────
+
+📊 OUTPUT FORMAT:
+
+{
+  "Imam Malik": {
+    "death_year_hijri": "179",
+    "url": "https://...",
+    "books": [
+      {
+        "english_title": "Al-Muwatta by Imam Malik",
+        "arabic_title": "الموطأ للإمام مالك"
+      }
+    ]
+  }
+}
+
+────────────────────────────────────────────────────────────────────────────────
+
+❓ TROUBLESHOOTING:
+
+  "No books found"     → Use scraper_undetected.py, verify URL
+  "403 Forbidden"      → Cloudflare blocked, use undetected version
+  "Chrome not found"   → Install Google Chrome or Chromium
+  "Module not found"   → Run: pip install -r requirements.txt
+
+────────────────────────────────────────────────────────────────────────────────
+
+✅ CHECKLIST:
+
+  [ ] Install dependencies (pip install -r requirements.txt)
+  [ ] Install undetected-chromedriver (pip install undetected-chromedriver selenium)
+  [ ] Add at least one scholar to scholars.json
+  [ ] Test the URL (python3 test_url.py <name> <year>)
+  [ ] Run the scraper (python3 scraper_undetected.py)
+  [ ] View results (python3 view_results.py)
+
+────────────────────────────────────────────────────────────────────────────────
+
+Good luck building your Islamic Scholars database! 📚
+
+For more help, see README.md
