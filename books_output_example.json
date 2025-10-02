@@ -1,0 +1,32 @@
+{
+  "imam-malik": {
+    "hijri_year": "179",
+    "url": "https://www.sifatusafwa.com/en/manufacturer/imam-malik-179h.html",
+    "books": [
+      {
+        "english_name": "Al-Muwatta by Imam Malik",
+        "arabic_name": "الموطأ للإمام مالك"
+      },
+      {
+        "english_name": "Commentary on Al-Muwatta",
+        "arabic_name": "شرح الموطأ"
+      }
+    ],
+    "book_count": 2
+  },
+  "imam-bukhari": {
+    "hijri_year": "256",
+    "url": "https://www.sifatusafwa.com/en/manufacturer/imam-bukhari-256h.html",
+    "books": [
+      {
+        "english_name": "Sahih al-Bukhari",
+        "arabic_name": "صحيح البخاري"
+      },
+      {
+        "english_name": "Al-Adab al-Mufrad",
+        "arabic_name": "الأدب المفرد"
+      }
+    ],
+    "book_count": 2
+  }
+}
